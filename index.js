@@ -3,7 +3,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import users from "./routes/users.js"
 
-//dotenv.config()
+dotenv.config()
 const port = 3000
 console.log(process.env.AWS_ACCESS_KEY_ID);
 console.log(process.env.AWS_SECRET_ACCESS_KEY);

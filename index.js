@@ -6,7 +6,6 @@ import users from "./routes/users.js"
 dotenv.config()
 const port = 3000
 const app = express();
-console.log(process.env.AWS_ACCESS_KEY_ID);
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {

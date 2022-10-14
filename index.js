@@ -8,6 +8,8 @@ const port = 3000
 const app = express();
 app.use(bodyParser.json());
 
+console.log(process.env.ACCESS_KEY_ID);
+
 app.get('/', (req, res) => {
     res.json({ "hello": "world" })
 })

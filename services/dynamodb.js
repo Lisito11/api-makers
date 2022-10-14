@@ -18,9 +18,9 @@ const TABLE_NAME = 'users';
     }
     try {
       await dynamoClient.put(params).promise()
-      return { success: true }
+      return { success: true,error: null  }
     } catch(error) {
-      return { success: false }
+      return { success: false, error:error }
     }
   }
 
@@ -31,9 +31,9 @@ const TABLE_NAME = 'users';
     }
     try {
       const { Items = [] } = await dynamoClient.scan(params).promise()
-      return { success: true, data: Items }
+      return { success: true, data: Items, error: null }
     } catch(error) {
-      return { success: false, data: null }
+      return { success: false, data: null, error: error }
     }
   }
 
@@ -47,9 +47,9 @@ const TABLE_NAME = 'users';
     }
     try {
       const { Item = {} } = await dynamoClient.get(params).promise()
-      return { success: true, data: Item }
+      return { success: true, data: Item, error: null  }
     } catch(error) {
-      return { success: false, data: null }
+      return { success: false, data: null, error: error }
     }
   }
 
@@ -63,9 +63,9 @@ const TABLE_NAME = 'users';
     }
     try {
       await dynamoClient.delete(params).promise()
-      return { success: true }
+      return { success: true, error: null }
     } catch(error) {
-      return { success: false }
+      return { success: false, error:error }
     }
   }
 

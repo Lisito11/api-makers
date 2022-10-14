@@ -15,6 +15,4 @@ app.get('/', (req, res) => {
 
 app.use('/api', users );
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+app.listen(port, () => {console.log(`listening on port ${port}`)})
